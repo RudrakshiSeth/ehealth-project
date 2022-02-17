@@ -18,68 +18,56 @@ import Container from '@mui/material/Container';
 
 const tiers = [
   {
-    title: 'Free',
-    price: '0',
+    title: 'Laboratory Results',
     description: [
-      '10 users included',
-      '2 GB of storage',
-      'Help center access',
-      'Email support',
+      'All the laboratory results, blood works can be found here ',
     ],
-    buttonText: 'Sign up for free',
-    buttonVariant: 'outlined',
-  },
-  {
-    title: 'Pro',
-    subheader: 'Most popular',
-    price: '15',
-    description: [
-      '20 users included',
-      '10 GB of storage',
-      'Help center access',
-      'Priority email support',
-    ],
-    buttonText: 'Get started',
+    buttonText: 'View',
     buttonVariant: 'contained',
   },
   {
-    title: 'Enterprise',
-    price: '30',
+    title: 'Drugs history',
     description: [
-      '50 users included',
-      '30 GB of storage',
-      'Help center access',
-      'Phone & email support',
+      'All the drugs prescribed can be found here',
     ],
-    buttonText: 'Contact us',
-    buttonVariant: 'outlined',
+    buttonText: 'View',
+    buttonVariant: 'contained',
+  },
+  {
+    title: 'Diagnosis Results',
+    description: [
+      'The diagnosis results can be found here ',
+    ],
+    buttonText: 'view',
+    //buttonVariant: 'outlined',
+    buttonVariant: 'contained',
   },
 ];
 
-const footers = [
-  {
-    title: 'Company',
-    description: ['Team', 'History', 'Contact us', 'Locations'],
-  },
-  {
-    title: 'Features',
-    description: [
-      'Cool stuff',
-      'Random feature',
-      'Team feature',
-      'Developer stuff',
-      'Another one',
-    ],
-  },
-  {
-    title: 'Resources',
-    description: ['Resource', 'Resource name', 'Another resource', 'Final resource'],
-  },
-  {
-    title: 'Legal',
-    description: ['Privacy policy', 'Terms of use'],
-  },
-];
+// const footers = [
+//   {
+//     title: 'eHealth',
+//     description: ['Team', 'History', 'Contact us', 'Locations'],
+//   },
+//   {
+//     title: 'Features',
+//     description: [
+//       'Cool stuff',
+//       'Random feature',
+//       'Team feature',
+//       'Developer stuff',
+//       'Another one',
+//     ],
+//   },
+//   {
+//     title: 'Resources',
+//     description: ['Resource', 'Resource name', 'Another resource', 'Final resource'],
+//   },
+//   {
+//     title: 'Legal',
+//     description: ['Privacy policy', 'Terms of use'],
+//   },
+// ];
 
 function PatientPortal() {
   return (
@@ -91,12 +79,13 @@ function PatientPortal() {
         color="default"
         elevation={0}
         sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
+        // style={{ background: '#06F4F8' }}
       >
         <Toolbar sx={{ flexWrap: 'wrap' }}>
-          <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-            Company name
+          <Typography variant="h6" color="#4169E1" noWrap sx={{ flexGrow: 1 }} fontFamily="Bradley Hand" fontSize='2.8rem'>
+            eHealth
           </Typography>
-          <nav>
+          {/* <nav>
             <Link
               variant="button"
               color="text.primary"
@@ -121,10 +110,10 @@ function PatientPortal() {
             >
               Support
             </Link>
-          </nav>
-          <Button href="#" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
+          </nav> */}
+          {/* <Button href="#" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
             Login
-          </Button>
+          </Button> */}
         </Toolbar>
       </AppBar>
       {/* Hero unit */}
@@ -136,12 +125,10 @@ function PatientPortal() {
           color="text.primary"
           gutterBottom
         >
-          Pricing
+          Patient Portal
         </Typography>
         <Typography variant="h5" align="center" color="text.secondary" component="p">
-          Quickly build an effective pricing table for your potential customers with
-          this layout. It&apos;s built with default MUI components with little
-          customization.
+          Access to all your health records just a click away!
         </Typography>
       </Container>
       {/* End hero unit */}
@@ -159,7 +146,7 @@ function PatientPortal() {
               <Card>
                 <CardHeader
                   title={tier.title}
-                  subheader={tier.subheader}
+                  // subheader={tier.subheader}
                   titleTypographyProps={{ align: 'center' }}
                 //   action={tier.title === 'Pro' ? <StarIcon /> : null}
                   subheaderTypographyProps={{
@@ -181,12 +168,12 @@ function PatientPortal() {
                       mb: 2,
                     }}
                   >
-                    <Typography component="h2" variant="h3" color="text.primary">
+                    {/* <Typography component="h2" variant="h3" color="text.primary">
                       ${tier.price}
-                    </Typography>
-                    <Typography variant="h6" color="text.secondary">
+                    </Typography> */}
+                    {/* <Typography variant="h6" color="text.secondary">
                       /mo
-                    </Typography>
+                    </Typography> */}
                   </Box>
                   <ul>
                     {tier.description.map((line) => (
@@ -222,7 +209,7 @@ function PatientPortal() {
         }}
       >
         <Grid container spacing={4} justifyContent="space-evenly">
-          {footers.map((footer) => (
+          {/* {footers.map((footer) => (
             <Grid item xs={6} sm={3} key={footer.title}>
               <Typography variant="h6" color="text.primary" gutterBottom>
                 {footer.title}
@@ -237,7 +224,7 @@ function PatientPortal() {
                 ))}
               </ul>
             </Grid>
-          ))}
+          ))} */}
         </Grid>
         {/* <Copyright sx={{ mt: 5 }} /> */}
       </Container>
