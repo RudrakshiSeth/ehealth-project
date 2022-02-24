@@ -16,58 +16,27 @@ import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 
 
-const tiers = [
-  {
-    title: 'Laboratory Results',
-    description: [
-      'All the laboratory results, blood works can be found here ',
-    ],
-    buttonText: 'View',
-    buttonVariant: 'contained',
-  },
-  {
-    title: 'Drugs history',
-    description: [
-      'All the drugs prescribed can be found here',
-    ],
-    buttonText: 'View',
-    buttonVariant: 'contained',
-  },
-  {
-    title: 'Diagnosis Results',
-    description: [
-      'The diagnosis results can be found here ',
-    ],
-    buttonText: 'view',
-    //buttonVariant: 'outlined',
-    buttonVariant: 'contained',
-  },
-];
 
-// const footers = [
-//   {
-//     title: 'eHealth',
-//     description: ['Team', 'History', 'Contact us', 'Locations'],
-//   },
-//   {
-//     title: 'Features',
-//     description: [
-//       'Cool stuff',
-//       'Random feature',
-//       'Team feature',
-//       'Developer stuff',
-//       'Another one',
-//     ],
-//   },
-//   {
-//     title: 'Resources',
-//     description: ['Resource', 'Resource name', 'Another resource', 'Final resource'],
-//   },
-//   {
-//     title: 'Legal',
-//     description: ['Privacy policy', 'Terms of use'],
-//   },
-// ];
+const showLabResults = (event) => {
+    event.preventDefault();
+   console.log("button clicked");
+   window.location.href='http://localhost:3000/route/404';
+    
+  };
+  
+  const showDrugResults = (event) => {
+    event.preventDefault();
+   console.log("button clicked");
+   window.location.href='http://localhost:3000/route/404';
+    
+  };
+
+  const showDaigResults = (event) => {
+    event.preventDefault();
+   console.log("button clicked");
+   window.location.href='http://localhost:3000/route/404';
+    
+  };
 
 function PatientPortal() {
   return (
@@ -133,70 +102,115 @@ function PatientPortal() {
       </Container>
       {/* End hero unit */}
       <Container maxWidth="md" component="main">
-        <Grid container spacing={5} alignItems="flex-end">
-          {tiers.map((tier) => (
-            // Enterprise card is full width at sm breakpoint
-            <Grid
-              item
-              key={tier.title}
-              xs={12}
-              sm={tier.title === 'Enterprise' ? 12 : 6}
-              md={4}
-            >
-              <Card>
-                <CardHeader
-                  title={tier.title}
-                  // subheader={tier.subheader}
-                  titleTypographyProps={{ align: 'center' }}
-                //   action={tier.title === 'Pro' ? <StarIcon /> : null}
-                  subheaderTypographyProps={{
-                    align: 'center',
-                  }}
-                  sx={{
-                    backgroundColor: (theme) =>
-                      theme.palette.mode === 'light'
-                        ? theme.palette.grey[200]
-                        : theme.palette.grey[700],
-                  }}
-                />
-                <CardContent>
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'baseline',
-                      mb: 2,
-                    }}
-                  >
-                    {/* <Typography component="h2" variant="h3" color="text.primary">
-                      ${tier.price}
-                    </Typography> */}
-                    {/* <Typography variant="h6" color="text.secondary">
-                      /mo
-                    </Typography> */}
-                  </Box>
-                  <ul>
-                    {tier.description.map((line) => (
-                      <Typography
+      <Grid container spacing={8} alignItems="flex-end">
+  <Grid item md={4} key='medical' xs={12} sm={12} >
+    <card>
+      <CardHeader 
+      title='Laboratory Results'
+      sx={{
+        backgroundColor: (theme) =>
+          theme.palette.mode === 'light'
+            ? theme.palette.grey[200]
+            : theme.palette.grey[700],
+      }}
+      />
+      <CardContent>
+      <box  sx={{ display: 'flex', justifyContent: 'center', alignItems: 'baseline', mb: 2, }}>
+       
+        </box>
+        <ul>
+        <Typography
                         component="li"
                         variant="subtitle1"
                         align="center"
-                        key={line}
+                        
                       >
-                        {line}
+                       All the laboratory results can be found here
                       </Typography>
-                    ))}
-                  </ul>
-                </CardContent>
-                <CardActions>
-                  <Button fullWidth variant={tier.buttonVariant}>
-                    {tier.buttonText}
+        </ul>
+
+      </CardContent>
+
+      <CardActions>
+      <Button fullWidth variant='contained' onClick={showLabResults}>
+                    view
                   </Button>
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
+      </CardActions>
+    </card>
+  </Grid>
+  <Grid item md={4} key='Diagnosis'xs={12} sm={12} >
+    <card>
+    <CardHeader 
+      title='Drugs History'
+      sx={{
+        backgroundColor: (theme) =>
+          theme.palette.mode === 'light'
+            ? theme.palette.grey[200]
+            : theme.palette.grey[700],
+      }}
+      />
+      <CardContent>
+      <box  sx={{ display: 'flex', justifyContent: 'center', alignItems: 'baseline', mb: 2, }}>
+          
+        </box>
+        <ul>
+        <Typography
+                        component="li"
+                        variant="subtitle1"
+                        align="center"
+                        
+                      >
+                      All the drugs prescribed can be found here
+                      </Typography>
+        </ul>
+
+      </CardContent>
+      <CardActions>
+      <Button fullWidth variant='contained' onClick={showDrugResults}>
+                    view
+                  </Button>
+      </CardActions>
+    </card>
+  </Grid>
+  <Grid item md={4}  key='LabRecords' xs={6} sm={6}>
+  <card >
+  <CardHeader 
+      title='Diagnosis Results'
+      titleTypographyProps={{ align: 'center' }}
+                  subheaderTypographyProps={{
+                    align: 'center',
+                  }}
+      sx={{
+        backgroundColor: (theme) =>
+          theme.palette.mode === 'light'
+            ? theme.palette.grey[200]
+            : theme.palette.grey[700],
+      }}
+      />
+      <CardContent>
+        <box  sx={{ display: 'flex', justifyContent: 'center', alignItems: 'baseline', mb: 2, }}>
+     
+        </box>
+        <ul>
+        <Typography
+                        component="li"
+                        variant="subtitle1"
+                        align="center"
+                      
+                      >
+                        The diagnosis results can be found here
+                      </Typography>
+        </ul>
+
+      </CardContent>
+      <CardActions>
+      <Button fullWidth variant='contained' onclick={showDaigResults}>
+                    view
+                  </Button>
+      </CardActions>
+    </card>
+  </Grid>
+</Grid>
       </Container>
       {/* Footer */}
       <Container
