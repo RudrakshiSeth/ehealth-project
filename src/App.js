@@ -1,20 +1,26 @@
 
 import './App.css';
-import Header from './components/Header/Header';
-import RegistrationForm from './components/RegistrationForm/RegistrationForm';
-import Login from './components/Login/Login';
-import SignUp from './components/SignUp/SignUp' ;
-import PatientPortal from './components/PatientPortal/PatientPortal';
-
+import React from 'react';
+import Header from './Pages/Header/Header';
+import RegistrationForm from './Pages/RegistrationForm/RegistrationForm';
+import Login from './Pages/Login/Login';
+import SignUp from './Pages/SignUp/SignUp' ;
+import PatientPortal from './Pages/PatientPortal/PatientPortal';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 function App() {
   return (
       <div className="App">
-        {/* <Login /> */}
-        {/* <SignUp /> */}
-        <PatientPortal />
+       <Router>
+        <Routes>
+        <Route path='/route/SignUp' element={<SignUp />} />
+        <Route path='/route/Login' element={<Login />} />
+        <Route path='/route/PatientPortal' element={<PatientPortal />} />
+        </Routes>
+        </Router>
       </div>
     
   );
 };
 
 export default App;
+

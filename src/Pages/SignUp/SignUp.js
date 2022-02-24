@@ -12,6 +12,8 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Toolbar from '@mui/material/Toolbar';
+import CardHeader from '@mui/material/CardHeader';
 
 
 const theme = createTheme();
@@ -24,20 +26,31 @@ function SignUp(props) {
       email: data.get('firstName'),
       password: data.get('lastName'),
     });
+    window.location.href='http://localhost:3001/route/Login';
   };
 
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
+ 
+        <Toolbar sx={{ flexWrap: 'wrap' }}>
+          
+          <Typography variant="h6" color="#4169E1" noWrap sx={{ flexGrow: 1 }} fontFamily="Bradley Hand" fontSize='2.8rem'>
+            eHealth
+          </Typography>
+          </Toolbar>
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 2,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            marginBottom: 4
           }}
         >
+          
+       
           {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar> */}
@@ -84,8 +97,37 @@ function SignUp(props) {
                   name="Date of Birth"
                   label="Date of Birth"
                   type="Date"
-                  id="Date of Birth"
-                  autoComplete="Date of Birth"
+                  defaultValue="2000-01-01"
+                />
+              </Grid> 
+              <Grid item xs={12}>
+              <TextField
+                  required
+                  fullWidth
+                  name="Height"
+                  label="Height(in cm) "
+                  type="Height"
+                  id="Height"
+                />
+              </Grid>
+              <Grid item xs={12}>
+              <TextField
+                  required
+                  fullWidth
+                  name="Gender"
+                  label="Gender"
+                  type="Gender"
+                  id="Gender"
+                />
+              </Grid>
+              <Grid item xs={12}>
+              <TextField
+                  required
+                  fullWidth
+                  name="Blood Group"
+                  label="Blood Group"
+                  type="Blood Group"
+                  id="Blood Group"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -143,7 +185,7 @@ function SignUp(props) {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="http://localhost:3001/route/Login" variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>
@@ -151,6 +193,7 @@ function SignUp(props) {
           </Box>
         </Box>
       </Container>
+      
     </ThemeProvider>
   );
 }

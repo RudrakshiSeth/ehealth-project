@@ -81,7 +81,7 @@ function PatientPortal() {
         sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
         // style={{ background: '#06F4F8' }}
       >
-        <Toolbar sx={{ flexWrap: 'wrap' }}>
+        <Toolbar sx={{ flexWrap: 'wrap' }} >
           <Typography variant="h6" color="#4169E1" noWrap sx={{ flexGrow: 1 }} fontFamily="Bradley Hand" fontSize='2.8rem'>
             eHealth
           </Typography>
