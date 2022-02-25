@@ -21,42 +21,42 @@ import Link from '@mui/material/Link';
 
 const theme = createTheme();
 
- 
+
 function Login(props) {
 
-    let handleSubmit = async (e) => {
-        e.preventDefault();
-        try { 
-          const data= new FormData(document.getElementById("LoginForm"));
-          let api = 'http://localhost:3000/api/user/:' ;
-          
-          let temp = api + data.get('email')
-          console.log(temp)
-          let res = await fetch(temp, {
-            method: "GET"
-          });
-          let resJson = await res.json();
-          let dbpassword = resJson[0].password;
-          // console.log(dbpassword);
-  
-          if (res.status === 200) {
-            
-              
-          if(data.get('password') === dbpassword) {
-              console.log(dbpassword)
-              window.location.href='http://localhost:3001/route/PatientPortal';
-              }
-                  else{
-                    alert("invalid passoword")
-                  }
+  let handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const data = new FormData(document.getElementById("LoginForm"));
+      let api = 'http://localhost:3000/api/user/:';
 
-          } else {
-           console.log("Some error occured");
-          }
-        } catch (err) {
-          console.log(err);
+      let temp = api + data.get('email')
+      console.log(temp)
+      let res = await fetch(temp, {
+        method: "GET"
+      });
+      let resJson = await res.json();
+      let dbpassword = resJson[0].password;
+      // console.log(dbpassword);
+
+      if (res.status === 200) {
+
+
+        if (data.get('password') === dbpassword) {
+          console.log(dbpassword)
+          window.location.href = 'http://localhost:3001/route/PatientPortal';
         }
-      };
+        else {
+          alert("invalid passoword")
+        }
+
+      } else {
+        console.log("Some error occured");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
 
   // const handleSubmit = (event) => {
@@ -82,17 +82,17 @@ function Login(props) {
   //   event.preventDefault();
   //  console.log("button clicked");
   //  window.location.href='http://localhost:3000/route/PatientPortal';
-    
+
   // };
 
 
-    // const history = useNavigate();
-    // const handleCick = () => history('http://localhost:3000/route/PatientPortal');//eg.history.push('/login');
+  // const history = useNavigate();
+  // const handleCick = () => history('http://localhost:3000/route/PatientPortal');//eg.history.push('/login');
 
 
 
   return (
-    
+
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -100,7 +100,7 @@ function Login(props) {
           <Typography variant="h6" color="#4169E1" noWrap sx={{ flexGrow: 1 }} fontFamily="Bradley Hand" fontSize='2.8rem'>
             eHealth
           </Typography>
-          </Toolbar>
+        </Toolbar>
         <Box
           sx={{
             marginTop: 8,
@@ -109,16 +109,16 @@ function Login(props) {
             alignItems: 'center',
           }}
         >
-         
-            
+
+
           {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar> */}
-         
+
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }} id = 'LoginForm' >
+          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }} id='LoginForm' >
             <TextField
               margin="normal"
               required
@@ -148,7 +148,7 @@ function Login(props) {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-              // onClick={handleCick}
+            // onClick={handleCick}
             >
               Sign In
             </Button>
@@ -169,6 +169,6 @@ function Login(props) {
       </Container>
     </ThemeProvider>
   );
-}; 
+};
 export default Login;
 
