@@ -5,7 +5,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 //import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -15,7 +14,10 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ReactDOM from 'react-dom';
 import { Navigate } from 'react-router-dom';
 import Toolbar from '@mui/material/Toolbar';
-import { useNavigate } from 'react-router-dom';
+import MedTable from '../MedResults/MedResults'
+import Link from '@mui/material/Link';
+
+
 
 const theme = createTheme();
 
@@ -25,12 +27,8 @@ function Login(props) {
     let handleSubmit = async (e) => {
         e.preventDefault();
         try { 
-          const data= new FormData(document.getElementById("LoginForm"))
-            // console.log({
-            //       email: data.get('email'),
-            //       password: data.get('password'),
-            //     });
-          let api = 'http://localhost:3000/api/user/:' 
+          const data= new FormData(document.getElementById("LoginForm"));
+          let api = 'http://localhost:3000/api/user/:' ;
           
           let temp = api + data.get('email')
           console.log(temp)
@@ -94,6 +92,7 @@ function Login(props) {
 
 
   return (
+    
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -110,6 +109,7 @@ function Login(props) {
             alignItems: 'center',
           }}
         >
+         
             
           {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />

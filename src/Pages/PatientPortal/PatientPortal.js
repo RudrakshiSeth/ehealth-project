@@ -20,21 +20,21 @@ import Container from '@mui/material/Container';
 const showLabResults = (event) => {
     event.preventDefault();
    console.log("button clicked");
-   window.location.href='http://localhost:3000/route/404';
+   window.location.href='http://localhost:3001/route/LabResults';
     
   };
   
   const showDrugResults = (event) => {
     event.preventDefault();
    console.log("button clicked");
-   window.location.href='http://localhost:3000/route/404';
+   window.location.href='http://localhost:3001/route/MedResults';
     
   };
 
   const showDaigResults = (event) => {
     event.preventDefault();
    console.log("button clicked");
-   window.location.href='http://localhost:3000/route/404';
+   window.location.href='http://localhost:3001/route/DiagResults';
     
   };
 
@@ -204,7 +204,7 @@ function PatientPortal() {
 
       </CardContent>
       <CardActions>
-      <Button fullWidth variant='contained' onclick={showDaigResults}>
+      <Button fullWidth variant='contained' onClick={showDaigResults}>
                     view
                   </Button>
       </CardActions>
