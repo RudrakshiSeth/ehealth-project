@@ -21,16 +21,23 @@ const theme = createTheme();
 function SignUp(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log(data);
-    const value = Object.fromEntries(data.entries());
+    try {
 
-    console.log({ value });
-    console.log(value["MailAddress"])
-    // console.log({
-    //   email: data.get('firstName'),
-    //   password: data.get('lastName'),
-    // });
+      const data = new FormData(event.currentTarget);
+      const value = Object.fromEntries(data.entries());
+      console.log(value);
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(value)
+      };
+      const response = fetch('http://localhost:3000/api/createUser', requestOptions)
+        .then(response => response.json())
+        .then(data => console.log(data));
+
+    } catch (err) {
+      console.log(err);
+    }
     // window.location.href='http://localhost:3000/route/Login';
   };
 
@@ -38,13 +45,13 @@ function SignUp(props) {
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
- 
+
         <Toolbar sx={{ flexWrap: 'wrap' }}>
-          
+
           <Typography variant="h6" color="#4169E1" noWrap sx={{ flexGrow: 1 }} fontFamily="Bradley Hand" fontSize='2.8rem'>
             eHealth
           </Typography>
-          </Toolbar>
+        </Toolbar>
         <Box
           sx={{
             marginTop: 2,
@@ -54,8 +61,8 @@ function SignUp(props) {
             marginBottom: 4
           }}
         >
-          
-       
+
+
           {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar> */}
@@ -96,7 +103,7 @@ function SignUp(props) {
                 />
               </Grid>
               <Grid item xs={12}>
-              <TextField
+                <TextField
                   required
                   fullWidth
                   name="Date of Birth"
@@ -104,9 +111,9 @@ function SignUp(props) {
                   type="Date"
                   defaultValue="2000-01-01"
                 />
-              </Grid> 
+              </Grid>
               <Grid item xs={12}>
-              <TextField
+                <TextField
                   required
                   fullWidth
                   name="Height"
@@ -116,7 +123,7 @@ function SignUp(props) {
                 />
               </Grid>
               <Grid item xs={12}>
-              <TextField
+                <TextField
                   required
                   fullWidth
                   name="Gender"
@@ -126,7 +133,7 @@ function SignUp(props) {
                 />
               </Grid>
               <Grid item xs={12}>
-              <TextField
+                <TextField
                   required
                   fullWidth
                   name="Blood Group"
@@ -136,7 +143,7 @@ function SignUp(props) {
                 />
               </Grid>
               <Grid item xs={12}>
-              <TextField
+                <TextField
                   required
                   fullWidth
                   name="Contact info"
@@ -147,7 +154,7 @@ function SignUp(props) {
                 />
               </Grid>
               <Grid item xs={12}>
-              <TextField
+                <TextField
                   required
                   fullWidth
                   name="Emergency contact"
@@ -158,7 +165,7 @@ function SignUp(props) {
                 />
               </Grid>
               <Grid item xs={12}>
-              <TextField
+                <TextField
                   required
                   fullWidth
                   name="Family doctor"
@@ -198,7 +205,7 @@ function SignUp(props) {
           </Box>
         </Box>
       </Container>
-      
+
     </ThemeProvider>
   );
 }
