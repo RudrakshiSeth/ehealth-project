@@ -22,11 +22,16 @@ function SignUp(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('firstName'),
-      password: data.get('lastName'),
-    });
-    window.location.href='http://localhost:3001/route/Login';
+    console.log(data);
+    const value = Object.fromEntries(data.entries());
+
+    console.log({ value });
+    console.log(value["MailAddress"])
+    // console.log({
+    //   email: data.get('firstName'),
+    //   password: data.get('lastName'),
+    // });
+    // window.location.href='http://localhost:3000/route/Login';
   };
 
   return (
