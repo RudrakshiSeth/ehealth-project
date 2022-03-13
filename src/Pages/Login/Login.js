@@ -116,7 +116,7 @@ function Login(props) {
           </Avatar> */}
 
           <Typography component="h1" variant="h5">
-            Sign in
+            Sign in twice
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }} id='LoginForm' >
             <TextField

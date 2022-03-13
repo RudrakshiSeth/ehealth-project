@@ -15,67 +15,22 @@ import Link from '@mui/material/Link';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 import { blue, red } from '@mui/material/colors';
-
-
-
-// const tiers = [
-//   {
-//     title: 'Free',
-//     price: '0',
-//     description: [
-//       '10 users included',
-//       '2 GB of storage',
-//       'Help center access',
-//       'Email support',
-//     ],
-//     buttonText: 'Sign up for free',
-//     buttonVariant: 'outlined',
-//   },
-//   {
-//     title: 'Pro',
-//     subheader: 'Most popular',
-//     price: '15',
-//     description: [
-//       '20 users included',
-//       '10 GB of storage',
-//       'Help center access',
-//       'Priority email support',
-//     ],
-//     buttonText: 'Get started',
-//     buttonVariant: 'contained',
-//   },
-//   {
-//     title: 'Enterprise',
-//     price: '30',
-//     description: [
-//       '50 users included',
-//       '30 GB of storage',
-//       'Help center access',
-//       'Phone & email support',
-//     ],
-//     buttonText: 'Contact us',
-//     buttonVariant: 'outlined',
-//   },
-// ];
+// import Background from '../images/background_image.png';
 
 const footers = [
   {
     title: 'Company',
-    description: ['Team', 'History', 'Contact us', 'Locations'],
+    description: ['Team'],
   },
   {
     title: 'Features',
     description: [
       'Cool stuff',
-      'Random feature',
-      'Team feature',
-      'Developer stuff',
-      'Another one',
     ],
   },
   {
     title: 'Resources',
-    description: ['Resource', 'Resource name', 'Another resource', 'Final resource'],
+    description: ['Resource'],
   },
   {
     title: 'Legal',
@@ -91,17 +46,25 @@ function PricingContent() {
     <React.Fragment>
       <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } } } />
       <CssBaseline />
-      <AppBar
+      <div 
+        style={{  
+          backgroundImage: "url(" + require("./749813.jpg") + ")",
+          height: '100%',
+
+        }}
+      >
+        {/* <AppBar
         position="static"
         color="default"
         elevation={0}
         sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
-      >
-        <Toolbar sx={{ flexWrap: 'wrap' }}>
-          <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-            eHealth
+        // style={{ background: '#06F4F8' }}
+      > */}
+        <Toolbar sx={{ flexWrap: 'wrap' }}    >
+          <Typography variant="h4" color="inherit" noWrap sx={{ flexGrow: 1 }}>
+            
           </Typography>
-          <nav>
+          <nav  >
             <Link
               variant="button"
               color="text.primary"
@@ -132,9 +95,13 @@ function PricingContent() {
             Login
           </Button>
         </Toolbar>
-      </AppBar>
+      {/* </AppBar> */}
       {/* Hero unit */}
-      <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
+
+   
+
+
+      <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}   >
         <Typography
           component="h1"
           variant="h2"
@@ -150,8 +117,8 @@ function PricingContent() {
         </Typography>
       </Container>
       {/* End hero unit */}
-      {/* <Container maxWidth="md" component="main"> */}
-        {/* <Grid container spacing={5} alignItems="flex-end">
+       {/* <Container maxWidth="md" component="main"    > 
+        { <Grid container spacing={5} alignItems="flex-end">
           {tiers.map((tier) => (
             // Enterprise card is full width at sm breakpoint
             <Grid
@@ -161,7 +128,7 @@ function PricingContent() {
               sm={tier.title === 'Enterprise' ? 12 : 6}
               md={4}
             >
-              <Card>
+              {/* <Card>
                 <CardHeader
                   title={tier.title}
                   subheader={tier.subheader}
@@ -211,18 +178,19 @@ function PricingContent() {
                     {tier.buttonText}
                   </Button>
                 </CardActions>
-              </Card>
-            </Grid>
+              </Card> */}
+            {/* </Grid>
           ))}
-        </Grid>
-      </Container> */}
-      {/* Footer */}
+        </Grid>}
+     </Container>  */} 
+     {/* {*Footer */}
       <Container
         maxWidth="md"
         component="footer"
+        // style={{ background: '#2E3B55' }}
         sx={{
           borderTop: (theme) => `1px solid ${theme.palette.divider}`,
-          mt: 8,
+          mt: 30,
           py: [3, 6],
         }}
       >
@@ -247,6 +215,7 @@ function PricingContent() {
         
       </Container>
       {/* End footer */}
+      </div>
     </React.Fragment>
     
   );
