@@ -78,7 +78,7 @@ function SignUp(props) {
                   required
                   fullWidth
                   id="firstName"
-                  label="First Name"
+                  label="FirstName"
                   autoFocus
                 />
               </Grid>
@@ -87,7 +87,7 @@ function SignUp(props) {
                   required
                   fullWidth
                   id="lastName"
-                  label="Last Name"
+                  label="LastName"
                   name="lastName"
                   autoComplete="family-name"
                 />
@@ -96,8 +96,8 @@ function SignUp(props) {
                 <TextField
                   required
                   fullWidth
-                  id="Mail Address"
-                  label="Mail Address"
+                  id="MailAddress"
+                  label="MailAddress"
                   name="MailAddress"
                   autoComplete="Mail Address"
                 />
@@ -106,8 +106,8 @@ function SignUp(props) {
                 <TextField
                   required
                   fullWidth
-                  name="Date of Birth"
-                  label="Date of Birth"
+                  name="DateofBirth"
+                  label="DateofBirth"
                   type="Date"
                   defaultValue="2000-01-01"
                 />
@@ -136,9 +136,9 @@ function SignUp(props) {
                 <TextField
                   required
                   fullWidth
-                  name="Blood Group"
-                  label="Blood Group"
-                  type="Blood Group"
+                  name="BloodGroup"
+                  label="BloodGroup"
+                  type="BloodGroup"
                   id="Blood Group"
                 />
               </Grid>
@@ -146,33 +146,33 @@ function SignUp(props) {
                 <TextField
                   required
                   fullWidth
-                  name="Contact info"
-                  label="Contact info"
+                  name="Contactinfo"
+                  label="Contactinfo"
                   type="email"
                   id="Contact info"
-                  autoComplete="email address"
+                  autoComplete="emailaddress"
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
-                  name="Emergency contact"
-                  label="Emergency contact"
+                  name="Emergencycontact"
+                  label="Emergencycontact"
                   type="email"
-                  id="Emergency contact"
-                  autoComplete="Emergency contact"
+                  id="Emergencycontact"
+                  autoComplete="Emergencycontact"
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
-                  name="Family doctor"
-                  label="Family doctor"
+                  name="Familydoctor"
+                  label="Familydoctor"
                   type="email"
                   id="Family doctor"
-                  autoComplete="Family doctor"
+                  autoComplete="Familydoctor"
                 />
               </Grid>
               <Grid item xs={12}>
