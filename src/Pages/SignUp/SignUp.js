@@ -32,8 +32,15 @@ function SignUp(props) {
         body: JSON.stringify(value)
       };
       const response = fetch('http://localhost:3000/api/createUser', requestOptions)
-        .then(response => response.json())
-        .then(data => console.log(data));
+        .then((response) => {
+          if(!response.ok) throw new Error(response.status);
+          else window.location.href='http://localhost:3001/route/Login' ;
+        })
+        console.log('response is ' + JSON. stringify(response));
+        
+      //  if (response.status == 20)
+          // window.location.href='http://localhost:3000/route/Login';
+        
 
     } catch (err) {
       console.log(err);
@@ -58,7 +65,7 @@ function SignUp(props) {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            marginBottom: 4
+            marginBottom: 1
           }}
         >
 
@@ -69,7 +76,7 @@ function SignUp(props) {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: -1 , marginBottom: 100 }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -110,16 +117,6 @@ function SignUp(props) {
                   label="DateofBirth"
                   type="Date"
                   defaultValue="2000-01-01"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="Height"
-                  label="Height(in cm) "
-                  type="Height"
-                  id="Height"
                 />
               </Grid>
               <Grid item xs={12}>

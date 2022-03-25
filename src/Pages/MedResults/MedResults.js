@@ -7,6 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import  {useEffect} from 'react';
 
 const columns = [
   { id: 'MedName', label: 'Medicine Name', minWidth: 170 },
@@ -27,8 +28,6 @@ const columns = [
   }
 ];
 
-
-
 function createData(MedName, frequency, startdate, enddate) {
   //const density = population / size;
   return { MedName, frequency, startdate,enddate };
@@ -41,23 +40,40 @@ const rows = [
 ];
 
 function MedResults(props) {
+
+  useEffect(() => {
+    async function fetchMyAPI() {
+      // let response = await fetch('http://localhost:3000/api/medication/:alysa')
+      // response = await response.json()
+      alert("hello");
+      let temp = "http://localhost:3000/api/medication/:alysa";
+      let res = await fetch(temp, {
+        method: "GET"
+      });
+      let resJson = await res.json();
+      console.log(resJson[0].frequency);
+    }
+
+    fetchMyAPI()
+  }, [])
     
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
+  
   const handleChangePage = (event, newPage) => {
+    
     setPage(newPage);
+
+  
+  
   };
 
   const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(+event.target.value);
+    alert("hello buddy i am handle row change ")
     setPage(0);
   };
-//   const { data } = this.props
 
-//   console.log("************************")
-//   console.log(data);
-//   console.log("************************")
   return (
     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
       <TableContainer sx={{ maxHeight: 440 }}>
