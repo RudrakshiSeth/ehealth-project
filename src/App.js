@@ -12,7 +12,7 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 function App() {
   return (
       <div className="App">
-       <Router>
+       <Router basename={'/myreactapp'}>
         <Routes>
         <Route path='/route/SignUp' element={<SignUp />} />
         <Route path='/route/Login' element={<Login />} />
@@ -20,8 +20,7 @@ function App() {
         <Route path='/route/MedResults' element={<MedResults />} />
         <Route path='/route/LabResults' element={<LabResults />} />
         <Route path='/route/DiagResults' element={<DiagResults />} />
-        <Route path='/route/HomePage' element={<HomePage />} />
-        
+        <Route path='/' element={<HomePage />} /> 
         </Routes>
         </Router>
       </div>

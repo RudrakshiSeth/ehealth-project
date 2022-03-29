@@ -1,8 +1,8 @@
 {
   "name": "ehealth-project",
-  "homepage": "https://e-hospital.ca",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/myreactapp",
   "dependencies": {
     "@emotion/cache": "^11.7.1",
     "@emotion/react": "^11.8.2",
@@ -17,6 +17,7 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.25.0",
+    "check-build": "^2.8.2",
     "express": "^4.17.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -31,6 +32,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -48,5 +50,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^4.41.2"
   }
 }
