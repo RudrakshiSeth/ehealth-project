@@ -34,7 +34,7 @@ function SignUp(props) {
       const response = fetch('http://localhost:3000/api/createUser', requestOptions)
         .then((response) => {
           if(!response.ok) throw new Error(response.status);
-          else window.location.href='http://localhost:3001/route/Login' ;
+          else window.location.href='https://e-hospital.ca/route/Login' ;
         })
         console.log('response is ' + JSON. stringify(response));
         
@@ -45,7 +45,7 @@ function SignUp(props) {
     } catch (err) {
       console.log(err);
     }
-    // window.location.href='http://localhost:3000/route/Login';
+
   };
 
   return (
@@ -56,7 +56,8 @@ function SignUp(props) {
         <Toolbar sx={{ flexWrap: 'wrap' }}>
 
           <Typography variant="h6" color="#4169E1" noWrap sx={{ flexGrow: 1 }} fontFamily="Bradley Hand" fontSize='2.8rem'>
-            eHealth
+            eHospital
+
           </Typography>
         </Toolbar>
         <Box
@@ -194,7 +195,7 @@ function SignUp(props) {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="http://localhost:3001/route/Login" variant="body2">
+                <Link href="https://e-hospital.ca/route/Login" variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>

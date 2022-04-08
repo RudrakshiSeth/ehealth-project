@@ -12,7 +12,7 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 function App() {
   return (
       <div className="App">
-       <Router basename={'/myreactapp'}>
+       <Router>
         <Routes>
         <Route path='/route/SignUp' element={<SignUp />} />
         <Route path='/route/Login' element={<Login />} />

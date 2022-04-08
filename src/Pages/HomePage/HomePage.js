@@ -90,12 +90,12 @@ function PricingContent() {
               color="text.primary"
               href="#"
               sx={{ my: 1, mx: 1.5 }}
-              href="http://localhost:3001/route/PatientPortal"
+              href="https://e-hospital.ca/route/PatientPortal"
             >
               Tool3
             </Link>
           </nav>
-          <Button href="http://localhost:3001/route/Login" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
+          <Button href="https://e-hospital.ca/route/Login" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
             Login
           </Button>
         </Toolbar>
@@ -113,10 +113,10 @@ function PricingContent() {
           color="text.primary"
           gutterBottom
         >
-          eHealth
+          eHospital
         </Typography>
         <Typography variant="h5" align="center" color="text.secondary" component="p">
-         eHealth comes with multiple options of storing your all your health data at one place to various 
+         eHealth comes with multiple options of storing your all your health data at one place and access to various 
          AI based tools to access your healthh conditions both mental and physical
         </Typography>
       </Container>

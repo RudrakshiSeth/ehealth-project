@@ -20,21 +20,22 @@ import Container from '@mui/material/Container';
 const showLabResults = (event) => {
     event.preventDefault();
    console.log("button clicked");
-   window.location.href='http://localhost:3001/route/LabResults';
+   window.location.href='https://e-hospital.ca/route/LabResults';
+   
     
   };
   
   const showDrugResults = (event) => {
     event.preventDefault();
    console.log("button clicked");
-   window.location.href='http://localhost:3001/route/MedResults';
+   window.location.href='https://e-hospital.ca/route/MedResults';
     
   };
 
   const showDaigResults = (event) => {
     event.preventDefault();
    console.log("button clicked");
-   window.location.href='http://localhost:3001/route/DiagResults';
+   window.location.href='https://e-hospital.ca/route/DiagResults';
     
   };
 
@@ -52,7 +53,7 @@ function PatientPortal() {
       >
         <Toolbar sx={{ flexWrap: 'wrap' }} >
           <Typography variant="h6" color="#4169E1" noWrap sx={{ flexGrow: 1 }} fontFamily="Bradley Hand" fontSize='2.8rem'>
-            eHealth
+            eHospital
           </Typography>
           {/* <nav>
             <Link

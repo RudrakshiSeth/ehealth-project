@@ -44,7 +44,7 @@ function Login(props) {
 
         if (data.get('password') === dbpassword) {
           console.log(dbpassword)
-          window.location.href = 'http://localhost:3001/route/PatientPortal';
+          window.location.href = 'https://e-hospital.ca/route/PatientPortal';
         }
         else {
           alert("invalid passoword")
@@ -98,7 +98,7 @@ function Login(props) {
         <CssBaseline />
         <Toolbar sx={{ flexWrap: 'wrap' }}>
           <Typography variant="h6" color="#4169E1" noWrap sx={{ flexGrow: 1 }} fontFamily="Bradley Hand" fontSize='2.8rem'>
-            eHealth
+            eHospital
           </Typography>
         </Toolbar>
         <Box
@@ -161,7 +161,7 @@ function Login(props) {
                 </Link> */}
               </Grid>
               <Grid item>
-                <Link href="http://localhost:3001/route/SignUp" variant="body2">
+                <Link href="https://e-hospital.ca/route/SignUp" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
