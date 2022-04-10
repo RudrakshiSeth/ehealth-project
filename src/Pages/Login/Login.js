@@ -11,10 +11,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import ReactDOM from 'react-dom';
-import { Navigate } from 'react-router-dom';
 import Toolbar from '@mui/material/Toolbar';
-import MedTable from '../MedResults/MedResults'
 import Link from '@mui/material/Link';
 
 
@@ -31,64 +28,44 @@ function Login(props) {
       let api = 'http://localhost:3000/api/user/:';
 
       let temp = api + data.get('email')
-      console.log(temp)
+      
+      localStorage.setItem("email", data.get('email'))
+     
+
       let res = await fetch(temp, {
         method: "GET"
       });
       let resJson = await res.json();
-      let dbpassword = resJson[0].password;
-      // console.log(dbpassword);
-
+    
+      
+      if (!(resJson.length === 0)){
+        let dbpassword = resJson[0].password;
+        let dbpatientid = resJson[0].patient_id;
+        localStorage.setItem("patientid", dbpatientid)
       if (res.status === 200) {
 
 
         if (data.get('password') === dbpassword) {
-          console.log(dbpassword)
+          
+         
           window.location.href = 'https://e-hospital.ca/route/PatientPortal';
         }
         else {
           alert("invalid passoword")
         }
+        
 
       } else {
-        console.log("Some error occured");
+        console.log("Some error occured in fetching api");
       }
+    }
+    else{
+      alert("no record exists");
+    }
     } catch (err) {
       console.log(err);
     }
   };
-
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();    
-  //   console.log("form clicked");
-  //   console.log(event)
-  //   const data = new FormData(event.currentTarget);
-  //   console.log({
-  //     email: data.get('email'),
-  //     password: data.get('password'),
-  //   });
-  //   if(data.get('email') === 'rudr')
-  //   {
-  //     console.log("oh balle")
-  //     //window.location.href='http://localhost:3001/route/PatientPortal';
-  //   }
-  //   else{
-  //     alert("invalid passoword")
-  //   }
-  // };
-
-  // const handleCick = (event) => {
-  //   event.preventDefault();
-  //  console.log("button clicked");
-  //  window.location.href='http://localhost:3000/route/PatientPortal';
-
-  // };
-
-
-  // const history = useNavigate();
-  // const handleCick = () => history('http://localhost:3000/route/PatientPortal');//eg.history.push('/login');
-
 
 
   return (
@@ -103,24 +80,18 @@ function Login(props) {
         </Toolbar>
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 2,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
           }}
         >
-
-
-          {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar> */}
-
           <Typography component="h1" variant="h5">
-
-            Sign in 
-
-          </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }} id='LoginForm' >
+                 Sign in 
+                  </Typography>
+          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ width: 1 }} id='LoginForm' >
+            <Grid sx={{  width: 1  }} >
+            <Grid >
             <TextField
               margin="normal"
               required
@@ -131,6 +102,9 @@ function Login(props) {
               autoComplete="email"
               autoFocus
             />
+               
+               </Grid>
+               <Grid >
             <TextField
               margin="normal"
               required
@@ -141,10 +115,16 @@ function Login(props) {
               id="password"
               autoComplete="current-password"
             />
+             </Grid>
+             <Grid>
+             
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
+            </Grid>
+           <Grid>
+
             <Button
               type="submit"
               fullWidth
@@ -154,18 +134,14 @@ function Login(props) {
             >
               Sign In
             </Button>
-            <Grid container>
-              <Grid item xs>
-                {/* <Link href="#" variant="body2">
-                  Forgot password?
-                </Link> */}
-              </Grid>
-              <Grid item>
+            </Grid>
+            <Grid item>
                 <Link href="https://e-hospital.ca/route/SignUp" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
             </Grid>
+          
           </Box>
         </Box>
       </Container>

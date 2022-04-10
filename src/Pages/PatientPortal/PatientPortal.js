@@ -21,14 +21,25 @@ const showLabResults = (event) => {
     event.preventDefault();
    console.log("button clicked");
    window.location.href='https://e-hospital.ca/route/LabResults';
+  
    
     
   };
   
   const showDrugResults = (event) => {
     event.preventDefault();
-   console.log("button clicked");
-   window.location.href='https://e-hospital.ca/route/MedResults';
+  
+   const savedemail = localStorage.getItem("email");
+   console.log(savedemail);
+   if (savedemail.toLowerCase().indexOf("provider") >= 0)
+   {
+    window.location.href='http://localhost:3002/route/MedResultsProvider';
+   }
+   else{
+    window.location.href='http://localhost:3002/route/MedResultsPatient';
+   }
+  //  window.location.href='https://e-hospital.ca/route/MedResults';
+  
     
   };
 

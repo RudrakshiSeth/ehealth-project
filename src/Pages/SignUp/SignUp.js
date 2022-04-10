@@ -1,19 +1,15 @@
 import * as React from 'react';
-// import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-// import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
-import CardHeader from '@mui/material/CardHeader';
+
 
 
 const theme = createTheme();
@@ -55,11 +51,14 @@ function SignUp(props) {
 
         <Toolbar sx={{ flexWrap: 'wrap' }}>
 
-          <Typography variant="h6" color="#4169E1" noWrap sx={{ flexGrow: 1 }} fontFamily="Bradley Hand" fontSize='2.8rem'>
+          <Typography  color="#4169E1" noWrap sx={{ flexGrow: 1 }} fontFamily="Bradley Hand" fontSize='2.8rem'>
             eHospital
-
-          </Typography>
+            </Typography>
+           
         </Toolbar>
+        <Typography component="h6" variant="h8">
+            Sign up
+          </Typography>
         <Box
           sx={{
             marginTop: 2,
@@ -69,14 +68,7 @@ function SignUp(props) {
             marginBottom: 1
           }}
         >
-
-
-          {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar> */}
-          <Typography component="h1" variant="h5">
-            Sign up
-          </Typography>
+      
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: -1 , marginBottom: 100 }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
@@ -184,22 +176,33 @@ function SignUp(props) {
                   autoComplete="new-password"
                 />
               </Grid>
-            </Grid>
-            <Button
+              <Button
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 0, mb: 0 }}
             >
               Sign Up
             </Button>
-            <Grid container justifyContent="flex-end">
+            <Link href="https://e-hospital.ca/route/Login" variant="body2">
+                  Already have an account? Sign in
+                </Link>
+            </Grid>
+            {/* <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 0, mb: 0 }}
+            >
+              Sign Up
+            </Button> */}
+            {/* <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link href="https://e-hospital.ca/route/Login" variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>
-            </Grid>
+            </Grid> */}
           </Box>
         </Box>
       </Container>
