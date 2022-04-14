@@ -20,23 +20,30 @@ import Container from '@mui/material/Container';
 const showLabResults = (event) => {
     event.preventDefault();
    console.log("button clicked");
-   window.location.href='https://e-hospital.ca/route/LabResults';
+  //  window.location.href='https://e-hospital.ca/route/LabResults';
+  const provideremail = window.sessionStorage.getItem("provideremail");
   
-   
-    
+  if (provideremail.toLowerCase().indexOf("provider") >= 0)
+  {
+   window.location.href='http://localhost:3003/route/LabResultsProvider';
+  }
+  else{
+   window.location.href='http://localhost:3003/route/LabResultsPatient';
+  }
+
   };
   
   const showDrugResults = (event) => {
     event.preventDefault();
   
-   const savedemail = localStorage.getItem("email");
-   console.log(savedemail);
-   if (savedemail.toLowerCase().indexOf("provider") >= 0)
+   const provideremail = window.sessionStorage.getItem("provideremail");
+   
+   if (provideremail.toLowerCase().indexOf("provider") >= 0)
    {
-    window.location.href='http://localhost:3002/route/MedResultsProvider';
+    window.location.href='http://localhost:3001/route/MedResultsProvider';
    }
    else{
-    window.location.href='http://localhost:3002/route/MedResultsPatient';
+    window.location.href='http://localhost:3001/route/MedResultsPatient';
    }
   //  window.location.href='https://e-hospital.ca/route/MedResults';
   
@@ -46,7 +53,17 @@ const showLabResults = (event) => {
   const showDaigResults = (event) => {
     event.preventDefault();
    console.log("button clicked");
-   window.location.href='https://e-hospital.ca/route/DiagResults';
+   const provideremail = window.sessionStorage.getItem("provideremail");
+ 
+   if (provideremail.toLowerCase().indexOf("provider") >= 0)
+   {
+    window.location.href='http://localhost:3001/route/DiagResultsProvider';
+   }
+   else{
+    window.location.href='http://localhost:3001/route/DiagResultsPatient';
+   }
+
+  //  window.location.href='https://e-hospital.ca/route/DiagResults';
     
   };
 

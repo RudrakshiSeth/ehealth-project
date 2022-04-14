@@ -1,5 +1,4 @@
 import * as React from 'react';
-//import Avatar from '@mui-ui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -7,7 +6,6 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-//import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -25,11 +23,15 @@ function Login(props) {
     e.preventDefault();
     try {
       const data = new FormData(document.getElementById("LoginForm"));
+      if (!(data.get('email').toLowerCase().indexOf("provider") >= 0))
+      {
+        window.sessionStorage.setItem("provideremail",'xxx');
       let api = 'http://localhost:3000/api/user/:';
 
       let temp = api + data.get('email')
       
-      localStorage.setItem("email", data.get('email'))
+      // localStorage.setItem("email", data.get('email'))
+      window.sessionStorage.setItem("email", data.get('email'));
      
 
       let res = await fetch(temp, {
@@ -39,9 +41,12 @@ function Login(props) {
     
       
       if (!(resJson.length === 0)){
+
+      
         let dbpassword = resJson[0].password;
         let dbpatientid = resJson[0].patient_id;
-        localStorage.setItem("patientid", dbpatientid)
+        window.sessionStorage.setItem("patientid", dbpatientid);
+        
       if (res.status === 200) {
 
 
@@ -58,11 +63,87 @@ function Login(props) {
       } else {
         console.log("Some error occured in fetching api");
       }
-    }
-    else{
+     
+    
+  }
+ 
+    else {
       alert("no record exists");
     }
-    } catch (err) {
+    }
+
+
+    else{
+      const patientemail = prompt('Please enter patient email')
+      
+
+      let api = 'http://localhost:3000/api/user/:';
+
+      let temp = api + data.get('email')
+
+      let res = await fetch(temp, {
+        method: "GET"
+      });
+      let resJson = await res.json();
+    
+      
+      if (!(resJson.length === 0)){
+
+      
+        let dbpassword = resJson[0].password;
+        let dbpatientid = resJson[0].patient_id;
+        
+      if (res.status === 200) {
+
+
+        if (data.get('password') === dbpassword) {
+          window.sessionStorage.setItem("provideremail",data.get('email'));
+
+          let api = 'http://localhost:3000/api/user/:';
+
+          let temp = api + patientemail
+
+	         let res = await fetch(temp, {
+              method: "GET"
+             });
+            let resJson = await res.json();
+            
+	        if (!(resJson.length === 0)){
+              let dbpatientid = resJson[0].patient_id;
+            window.sessionStorage.setItem("patientid", dbpatientid);
+            window.sessionStorage.setItem("email", patientemail);
+
+          window.location.href = 'https://e-hospital.ca/route/PatientPortal';
+        
+      if (!(res.status === 200)) {
+		console.log("Some error occured in fetching api");
+      }
+      } 
+ 
+    else {
+      alert("no patient exists");
+    }
+        }
+        else {
+          alert("invalid passoword")
+        }
+        
+
+      } else {
+        console.log("Some error occured in fetching api");
+      }
+     
+    
+  }
+ 
+    else {
+      alert("no record exists");
+    }
+     
+    }
+  }
+
+   catch (err) {
       console.log(err);
     }
   };

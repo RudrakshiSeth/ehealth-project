@@ -1,5 +1,5 @@
-import React, { useState, Fragment } from "react";
-import "./diag.css";
+import React from "react";
+import "./lab.css";
 import  {useEffect} from 'react';
 
 function DiagResultspatient(props) {
@@ -10,7 +10,7 @@ function DiagResultspatient(props) {
 
   useEffect(() => {
     async function fetchMyAPI() {
-      let api = 'http://localhost:3000/api/Diagnosis/:';
+      let api = 'http://localhost:3000/api/lab/:';
 
       let temp = api + savedemail;
     
@@ -30,20 +30,22 @@ function DiagResultspatient(props) {
         <table>
           <thead>
             <tr>
-              <th>Diagnosis</th>
-              <th>Data detected</th>
-              <th>Date Cured</th>
-              <th>Doctor</th>
+
+              <th>Test name</th>
+              <th>Data test taken</th>
+              <th>Artifacts</th>
+              <th>Reffered_by</th>
               
             </tr>
           </thead>
           <tbody>
             {data.map((data) => (
+                          
               <tr>
-                <td>{data.description}</td>
-                <td>{data.date_detected}</td>
-               <td>{data.date_of_recovery}</td>
-               <td>{data.doctor}</td>
+                <td>{data.test_name}</td>
+                <td>{data.date_test_taken}</td>
+               <td>{data.artifacts}</td>
+               <td>{data.reffered_by}</td>
               </tr>
             ))}
           </tbody>

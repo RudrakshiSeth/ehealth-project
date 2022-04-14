@@ -188,21 +188,6 @@ function SignUp(props) {
                   Already have an account? Sign in
                 </Link>
             </Grid>
-            {/* <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 0, mb: 0 }}
-            >
-              Sign Up
-            </Button> */}
-            {/* <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link href="https://e-hospital.ca/route/Login" variant="body2">
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
-            </Grid> */}
           </Box>
         </Box>
       </Container>
