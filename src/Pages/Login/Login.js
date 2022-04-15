@@ -26,7 +26,7 @@ function Login(props) {
       if (!(data.get('email').toLowerCase().indexOf("provider") >= 0))
       {
         window.sessionStorage.setItem("provideremail",'xxx');
-      let api = 'http://localhost:3000/api/user/:';
+      let api = 'https://fathomless-gorge-20039.herokuapp.com/api/user/:';
 
       let temp = api + data.get('email')
       
@@ -77,7 +77,7 @@ function Login(props) {
       const patientemail = prompt('Please enter patient email')
       
 
-      let api = 'http://localhost:3000/api/user/:';
+      let api = 'https://fathomless-gorge-20039.herokuapp.com/api/user/:';
 
       let temp = api + data.get('email')
 
@@ -99,7 +99,7 @@ function Login(props) {
         if (data.get('password') === dbpassword) {
           window.sessionStorage.setItem("provideremail",data.get('email'));
 
-          let api = 'http://localhost:3000/api/user/:';
+          let api = 'https://fathomless-gorge-20039.herokuapp.com/api/user/:';
 
           let temp = api + patientemail
 
@@ -132,8 +132,7 @@ function Login(props) {
       } else {
         console.log("Some error occured in fetching api");
       }
-     
-    
+ 
   }
  
     else {

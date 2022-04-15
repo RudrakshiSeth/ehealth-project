@@ -27,15 +27,14 @@ function SignUp(props) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(value)
       };
-      const response = fetch('http://localhost:3000/api/createUser', requestOptions)
+      const response = fetch('https://fathomless-gorge-20039.herokuapp.com/api/createUser', requestOptions)
         .then((response) => {
           if(!response.ok) throw new Error(response.status);
           else window.location.href='https://e-hospital.ca/route/Login' ;
         })
         console.log('response is ' + JSON. stringify(response));
         
-      //  if (response.status == 20)
-          // window.location.href='http://localhost:3000/route/Login';
+     
         
 
     } catch (err) {

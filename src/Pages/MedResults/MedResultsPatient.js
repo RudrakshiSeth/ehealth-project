@@ -10,7 +10,7 @@ function MedResultspatient(props) {
 
   useEffect(() => {
     async function fetchMyAPI() {
-      let api = 'http://localhost:3000/api/medication/:';
+      let api = 'https://fathomless-gorge-20039.herokuapp.com/api/medication/:';
 
       let temp = api + savedemail;
     

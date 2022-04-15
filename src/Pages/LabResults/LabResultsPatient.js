@@ -10,7 +10,7 @@ function DiagResultspatient(props) {
 
   useEffect(() => {
     async function fetchMyAPI() {
-      let api = 'http://localhost:3000/api/lab/:';
+      let api = 'https://fathomless-gorge-20039.herokuapp.com/api/lab/:';
 
       let temp = api + savedemail;
     

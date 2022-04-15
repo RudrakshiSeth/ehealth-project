@@ -10,7 +10,7 @@ function MedResultstemp(props) {
 
   useEffect(() => {
     async function fetchMyAPI() {
-      let api = 'http://localhost:3000/api/medication/:';
+      let api = 'https://fathomless-gorge-20039.herokuapp.com/api/medication/:';
 
       let temp = api + savedemail;
       let res = await fetch(temp, {
@@ -82,7 +82,7 @@ function MedResultstemp(props) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     };
-    const response = fetch('http://localhost:3000/api/createmeddata', requestOptions)
+    const response = fetch('https://fathomless-gorge-20039.herokuapp.com/api/createmeddata', requestOptions)
       .then((response) => {
         if(!response.ok) throw new Error(response.status);
       })
@@ -113,7 +113,7 @@ function MedResultstemp(props) {
       body: JSON.stringify(data1)
     };
 
-    const response = fetch('http://localhost:3000/api/deletemeddata', requestOptions)
+    const response = fetch('https://fathomless-gorge-20039.herokuapp.com/api/deletemeddata', requestOptions)
       .then((response) => {
         if(!response.ok) throw new Error(response.status);
       })

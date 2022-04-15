@@ -56,19 +56,12 @@ function PricingContent() {
 
         }}
       >
-        {/* <AppBar
-        position="static"
-        color="default"
-        elevation={0}
-        sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
-        // style={{ background: '#06F4F8' }}
-      > */}
         <Toolbar sx={{ flexWrap: 'wrap' }}    >
           <Typography variant="h4" color="inherit" noWrap sx={{ flexGrow: 1 }}>
             
           </Typography>
           <nav  >
-            <Link
+            {/* <Link
               variant="button"
               color="text.primary"
               href="#"
@@ -92,7 +85,7 @@ function PricingContent() {
               href="https://e-hospital.ca/route/PatientPortal"
             >
               Tool3
-            </Link>
+            </Link> */}
           </nav>
           <Button href="https://e-hospital.ca/route/Login" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
             Login
