@@ -25,10 +25,10 @@ const showLabResults = (event) => {
   
   if (provideremail.toLowerCase().indexOf("provider") >= 0)
   {
-   window.location.href='http://e-hospital.ca/route/LabResultsProvider';
+   window.location.href='https://e-hospital.ca/route/LabResultsProvider';
   }
   else{
-   window.location.href='http://e-hospital.ca/route/LabResultsPatient';
+   window.location.href='https://e-hospital.ca/route/LabResultsPatient';
   }
 
   };
@@ -40,10 +40,10 @@ const showLabResults = (event) => {
    
    if (provideremail.toLowerCase().indexOf("provider") >= 0)
    {
-    window.location.href='http://e-hospital.ca/route/MedResultsProvider';
+    window.location.href='https://e-hospital.ca/route/MedResultsProvider';
    }
    else{
-    window.location.href='http://e-hospital.ca/route/MedResultsPatient';
+    window.location.href='https://e-hospital.ca/route/MedResultsPatient';
    }
 
   
@@ -57,10 +57,10 @@ const showLabResults = (event) => {
  
    if (provideremail.toLowerCase().indexOf("provider") >= 0)
    {
-    window.location.href='http://e-hospital.ca/route/DiagResultsProvider';
+    window.location.href='https://e-hospital.ca/route/DiagResultsProvider';
    }
    else{
-    window.location.href='http://e-hospital.ca/route/DiagResultsPatient';
+    window.location.href='https://e-hospital.ca/route/DiagResultsPatient';
    }
 
   //  window.location.href='https://e-hospital.ca/route/DiagResults';

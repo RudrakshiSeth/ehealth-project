@@ -3,7 +3,8 @@ import "./medre.css";
 import  {useEffect} from 'react';
 
 function MedResultspatient(props) {
-  const savedemail = localStorage.getItem("email");
+  const savedemail = window.sessionStorage.getItem("email");
+
    console.log(savedemail);
 
   const [data, setData] = React.useState([])

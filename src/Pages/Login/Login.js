@@ -46,6 +46,7 @@ function Login(props) {
         let dbpassword = resJson[0].password;
         let dbpatientid = resJson[0].patient_id;
         window.sessionStorage.setItem("patientid", dbpatientid);
+       
         
       if (res.status === 200) {
 

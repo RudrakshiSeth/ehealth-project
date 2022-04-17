@@ -5,7 +5,8 @@ import { nanoid } from "nanoid";
 
 function MedResultstemp(props) {
   const [data, setData] = React.useState([])
-  const savedemail = localStorage.getItem("email");
+  const savedemail = window.sessionStorage.getItem("email");
+  
   
 
   useEffect(() => {
@@ -60,7 +61,7 @@ function MedResultstemp(props) {
 
     const newPatients = [...data, newPatient];
     setData(newPatients);
-    const savedpatientid = localStorage.getItem("patientid");
+    const savedpatientid = window.sessionStorage.getItem("patientid");
     const min = Math.ceil(0);
     const max = Math.floor(2147);
     const medid = Math.floor(Math.random() * (max - min) + min); 
@@ -91,7 +92,7 @@ function MedResultstemp(props) {
 
   const handleDeleteClick = (patientId,event) => {
   
-    const savedpatientid = localStorage.getItem("patientid");
+    const savedpatientid = window.sessionStorage.getItem("patientid");
     const newpatientarray = [...data];
 
     const index = data.findIndex((data) => data.id === patientId);

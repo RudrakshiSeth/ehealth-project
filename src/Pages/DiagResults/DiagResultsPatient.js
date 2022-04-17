@@ -3,8 +3,9 @@ import "./diag.css";
 import  {useEffect} from 'react';
 
 function DiagResultspatient(props) {
-  const savedemail = localStorage.getItem("email");
-   console.log(savedemail);
+  const savedemail = window.sessionStorage.getItem("email");
+  
+   
 
   const [data, setData] = React.useState([])
 
